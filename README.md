@@ -15,3 +15,10 @@
     <li><a href="http://b91561ll.beget.tech/TVstep/home.php">Онлайн телевидение (нерабочий)</a></li>
   </ol>
 </ul>
+<h1>Сайты в GitHub</h1>
+<ul>
+  <li>Тестовые</li>
+  <ol>
+    <li><a href="b91561ll.github.io/test.html">Тестирование хостинга (для разработчиков)</a></li>
+  </ol>
+</ul>

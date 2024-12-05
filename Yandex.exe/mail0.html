@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почта</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .content .sidebar .nesort .backup{
+            position: absolute;
+            border-radius: 10px;
+            background: #b6b5b5;
+            height: 40px;
+            width: 200px;
+            cursor: pointer;
+        }
+        .content .sidebar .nesort img{
+            position: absolute;
+            top: 12.5px;
+            left: 15px;
+            cursor: pointer;
+        }
+        .content .sidebar .nesort p{
+            position: absolute;
+            top: 2.5px;
+            left: 60px;
+            cursor: pointer;
+        }
+        .content .sidebar .send .backup{
+            position: absolute;
+            top: 50px;
+            border-radius: 10px;
+            background: #b6b5b5;
+            height: 40px;
+            width: 200px;
+            cursor: pointer;
+        }
+        .content .sidebar .send img{
+            position: absolute;
+            top: 55px;
+            left: 15px;
+            cursor: pointer;
+        }
+        .content .sidebar .send p{
+            position: absolute;
+            top: 45px;
+            left: 60px;
+            cursor: pointer;
+        }
+        .content .sidebar .all .backup{
+            position: absolute;
+            top: 92px;
+            border-radius: 10px;
+            background: #b6b5b5;
+            height: 40px;
+            width: 200px;
+            cursor: pointer;
+        }
+        .content .sidebar .all img{
+            position: absolute;
+            top: 98px;
+            left: 15px;
+            cursor: pointer;
+        }
+        .content .sidebar .all p{
+            position: absolute;
+            top: 88px;
+            left: 60px;
+            cursor: pointer;
+        }
+        .content .sidebar .spam .backup{
+            position: absolute;
+            top: 134px;
+            border-radius: 10px;
+            background: #b6b5b5;
+            height: 40px;
+            width: 200px;
+            cursor: pointer;
+        }
+        .content .sidebar .spam img{
+            position: absolute;
+            top: 138px;
+            left: 15px;
+            cursor: pointer;
+        }
+        .content .sidebar .spam p{
+            position: absolute;
+            top: 128px;
+            left: 60px;
+            cursor: pointer;
+        }
+        .content .userinit .user .icon img{
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+        .content .userinit .user .icon img:hover{
+            border: 3px #000000 solid;
+            border-radius: 50%;
+        }
+        .content .subcontent .view .start{
+            position: absolute;
+            top: 300px;
+            left: 600px;
+            text-align: center;
+        }
+        .content .userinit .user .back button{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            height: 30px;
+            background: #fff000;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="userinit">
+            <div class="user">
+                <div class="icon">
+                    <img title="Имя:Гость ID:XYQ1488" width="60px" src="images/no-profile.png" alt="user_logo">
+                </div>
+                <div class="back">
+                    <button>вернуться в поисковую систему</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="nesort">
+                <div class="backup"></div>
+                <img width="30px" src="images/mail3.png" alt="notsort">
+                <p>Несортированные</p>
+                <div class="view"></div>
+            </div>
+            <div class="send">
+                <div class="backup"></div>
+                <img width="30px" src="images/mail4.png" alt="send">
+                <p>Отправленные</p>
+                <div class="view"></div>
+            </div>
+            <div class="all">
+                <div class="backup"></div>
+                <img width="30px" src="images/mail5.png" alt="all_sent">
+                <p>Все сообщения</p>
+                <div class="view"></div>
+            </div>
+            <div class="spam">
+                <div class="backup"></div>
+                <img width="30px" src="images/mail6.png" alt="spam">
+                <p>Спам</p>
+                <div class="view"></div>
+            </div>
+        </div>
+        <div class="subcontent">
+            <div class="view">
+                <div class="start">
+                    <img width="150px" src="images/mail7.png">
+                    <h2>Начните использовать почту прямо <em>СЕЙЧАС</em></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let nosortview = document.querySelector('.content .sidebar .nesort .view');
+    let nesort = document.querySelector('.content .sidebar .nesort');
+    let backnesort = document.querySelector('.content .sidebar .nesort .backup');
+    let viwa = document.querySelector('.content .subcontent .view');
+    let asviw = document.querySelector('.content .subcontent .view .start');
+    let mailact = 0;
+    let bsub = false
+    let csub = 0;
+    setTimeout(act1, 10000);
+    nesort.addEventListener('click', act2);
+    function act2(){
+        if (csub == 0){
+            csub = 1;
+            backnesort.style = 'background: #ffffff;';
+            if (bsub == false){
+                viwa.removeChild(asviw);
+                bsub = true; 
+            }
+            if (mailact == 0){
+                const ah2 = document.createElement('h2');
+                ah2.textContent = 'Тут пока нет сообщений';
+                ah2.style = 'position: absolute; top: 300px; left: 600px; text-align: center;';
+                viwa.appendChild(ah2);
+            }   
+            if (mailact == 1){
+                const backup = document.createElement('div');
+                backup.style = 'background: #808080; height: 30px; width: 400px; position: absolute; top: 0px; left: 100px;';
+                viwa.appendChild(backup);
+            }
+        }
+    }
+    function act1(){
+        mailact++
+        const backa = document.createElement('div');
+        const p1 = document.createElement('p');
+        backa.style = 'position: absolute; height: 20px; width: 20px; top: 18px; left: 180px; background: #808080; border-radius: 50%;';
+        p1.style = 'position: absolute; top: 5px; left: 185px; color: #ffffff;';
+        p1.textContent = mailact;
+        nosortview.appendChild(backa);
+        nosortview.appendChild(p1);
+    }
+</script>
+          </html>
+          

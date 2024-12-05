@@ -12,6 +12,6 @@
   </ol>
   <li>архивы</li>
   <ol>
-    <li><a href="http://b91561ll.beget.tech/TVstep/Home.php">Онлайн телевидение (нерабочий)</a></li>
+    <li><a href="http://b91561ll.beget.tech/TVstep/home.php">Онлайн телевидение (нерабочий)</a></li>
   </ol>
 </ul>

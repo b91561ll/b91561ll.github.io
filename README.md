@@ -6,4 +6,5 @@
 <h1>Сайты с хостинга beget</h1>
 <ol>
   <li><a href="http://b91561ll.beget.tech/ITstep">Мой основной сайт</a></li>
+  <li><a href="http://b91561ll.beget.tech/kulinaria.ru">Сайт подработки</a></li>
 </ol>

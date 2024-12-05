@@ -19,6 +19,6 @@
 <ul>
   <li>Тестовые</li>
   <ol>
-    <li><a href="b91561ll.github.io/test.html">Тестирование хостинга (для разработчиков)</a></li>
+    <li><a href="https://b91561ll.github.io/test.html">Тестирование хостинга (для разработчиков)</a></li>
   </ol>
 </ul>

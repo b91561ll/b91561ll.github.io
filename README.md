@@ -21,9 +21,13 @@
   <ol>
     <li><a href="https://b91561ll.github.io/test.html">Тестирование хостинга (для разработчиков)</a></li>
   </ol>
+  <li>Игровые</li>
+  <ol>
+    <li><a href="https://b91561ll.github.io/Yandex.exe">Yandex.exe (сырая игра)</li>
+  </ol>
 </ul>
 <h1>Что нового</h1>
-<p><b>В ближайшее время будет выпущен мой сырой релиз игры yandex.exe</b></p>
+<p><b>Был выпущен мой сырой релиз игры yandex.exe</b></p>
 <p>Это игра из франшизы хорора маскирует себя под безобидный поисковик</p>
 <h3>Внимание!!!</h3>
 <p>В игре если ввести определенную команду в поисковую строку, то вам откроется <a href="https://malwarepedia.fandom.com/ru/wiki/JavaScript.YouAreAnIdiot">You are an idiot</a>.</p>

@@ -23,7 +23,7 @@
   </ol>
   <li>Игровые</li>
   <ol>
-    <li><a href="https://b91561ll.github.io/Yandex.exe">Yandex.exe (сырая игра)</li>
+    <li><a href="https://b91561ll.github.io/Yandex.exe">Yandex.exe (сырая игра)</a></li>
   </ol>
 </ul>
 <h1>Что нового</h1>

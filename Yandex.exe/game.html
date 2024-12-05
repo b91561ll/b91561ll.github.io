@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yandex</title>
+</head>
+<style>
+    body{
+        background: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .content .inpt img{
+        position: absolute;
+        top: 200px;
+    }
+    .content .inpt input{
+        position: absolute;
+        top: 230px;
+        left: 200px;
+        height: 35px;
+        width: 1000px;
+        border: 3px #f1f100 solid;
+        font-size: 20px;
+    }
+    .content .inpt button{
+        position: absolute;
+        top: 230px;
+        left: 1210px;
+        height: 43px;
+        width: 80px;
+        background: #f1f100;
+        border: 3px #f1f100 solid;
+    }
+    .content .inpt button:hover{
+        border: 3px #000000 solid;
+        cursor: pointer;
+    }
+    .content .userinit .user .icon img{
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+    }
+    .content .userinit .user .icon img:hover{
+        border: 3px #000000 solid;
+        border-radius: 50%;
+    }
+    .content .userinit .mailbox img{
+        position: absolute;
+        top: 0px;
+        cursor: pointer;
+    }
+    .content .userinit .user .info p{
+        position: absolute;
+        top: -2.5px;
+        right: 100px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .content .userinit .user .info .subtitle p{
+        position: absolute;
+        top: 40px;
+        right: 100px;
+        color: #808080;
+        font-size: 10px;
+        font-style: italic;
+        cursor: default;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="userinit">
+            <div class="user">
+                <div class="icon">
+                    <img title="Гость (ещё более тупей имя не придумаешь?)" width="60px" src="images/no-profile.png" alt="user_logo">
+                </div>
+                <div class="info">
+                    <p title="Гость (ещё более тупей имя не придумаешь?)"><b>Гость</b></p>
+                    <span class="subtitle">
+                        <p title="ID:XYQ1488">ID:XYQ1488</p>
+                    </span>
+                </div>
+            </div>
+            <div class="mailbox">
+                <img src="images/maIl1.png" alt="mail" title="почта">
+            </div>
+        </div>
+        <div class="inpt">
+            <img width="150px" src="images/x-VQJucUUcA.jpg" alt="yandex_logo">
+            <input title="тут короч ищи запрос" placeholder="найдётся всё">
+            <button title="поиск">найти</button>
+        </div>
+        <div class="subcontent">
+            <div class="view">
+                <div class="overview"></div>
+            </div>
+            <div class="info">
+                <div class="overinfo"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('.content .inpt button');
+    let inpt = document.querySelector('.content .inpt input');
+    let img_mail = document.querySelector('.content .userinit .mailbox img');
+    let container1 = document.querySelector('.content .inpt');
+    let imginit = document.querySelector('.content .inpt img');
+    let view = document.querySelector('.content .subcontent .view .overview');
+    let container3 = document.querySelector('.content .subcontent .view');
+    let container4 = document.querySelector('.content .userinit .mailbox');
+    let act = 0;
+    let bsub = 0;
+    let subact = 0;
+    let asub = false;
+    let mailact = 0;
+    let sentmail = 0;
+    btn.addEventListener('click', act1);
+    img_mail.addEventListener('click', act6);
+    img_mail.addEventListener('mouseover', act2);
+    img_mail.addEventListener('mouseout', act3);
+    function act6(){
+        if (sentmail == 0){
+            setTimeout(function(){
+                window.location.href = 'mail0.html';
+            }, 0);
+        }
+    }
+    setTimeout(act5, 20000);
+    function act5(){
+        mailact = 1;
+        sentmail++
+        const backup = document.createElement('div');
+        const intmail = document.createElement('p');
+        intmail.textContent = sentmail;
+        backup.style = 'cursor: pointer; position: absolute; height: 20px; width: 20px; top: 40px; left: 45px; background: #ff0000; border-radius: 50%;';
+        intmail.style = 'cursor: pointer; position: absolute; top: 25px; left: 50px; color: #ffffff;';
+        backup.title = '1 непрочитанное';
+        intmail.title = '1 непрочитанное';
+        container4.appendChild(backup);
+        container4.appendChild(intmail);
+    }
+    inpt.addEventListener('change', () => {
+        if (inpt.value != ''){
+            if (bsub == 0){
+                bsub = 1;
+                const clear = document.createElement('img');
+                clear.src = 'images/clear.png';
+                clear.style = 'position: absolute; top: 230px; left: 1165px; height: 40px; width: 40px; opacity: 0.5; cursor: pointer;';
+                clear.title = 'очистить всё';
+                clear.id = 'a9';
+                container1.appendChild(clear);
+                clear.addEventListener('click', act4);
+                function act4(){
+                    inpt.value = '';
+                    container1.removeChild(clear);
+                    bsub = 0;
+                }
+            }
+        }
+        if (inpt.value == ''){
+            if (bsub == 1){
+                const clear = document.getElementById('a9');
+                container1.removeChild(clear);
+                bsub = 0;
+            }
+        }
+    });
+    function act3(){
+        img_mail.src = 'images/maIl1.png';
+    }
+    function act2(){
+        img_mail.src = 'images/mail2.gif';
+    }
+    function act1(){
+        if(inpt.value == 'virus' || inpt.value == 'Virus' || inpt.value == 'VIRUS'){
+            setTimeout(function(){
+                window.location.href = 'https://youareanidiot.cc/';
+            }, 0);
+        }
+        if(inpt.value == 'Google' || inpt.value == 'google' || inpt.value == 'GOOGLE'){
+            alert('Ты серьёзно?');
+        }
+        if(inpt.value == '666'){
+            if (act == 0){
+                if (asub == true){
+                    subact = 1;
+                }
+                act = 1;
+                imginit.style = 'display: none;';
+                container1.style = 'position: relative; bottom: 230px;';
+                view.style = 'position: relative; top: 70px; border: 3px #b3b3b3 solid; height: 150px; width: 1000px; border-radius: 20px; opacity: 1;';
+                if (subact == 1){
+                    const ah2 = document.getElementById('a8');
+                    container3.removeChild(ah2);
+                    subact = 0;
+                    asub = false;
+                }
+            }
+            if (act == 1){
+                imginit.style = 'display: none;';
+                container1.style = 'position: relative; bottom: 230px;';
+                const a666 = document.createElement('a');
+                const un666 = document.createElement('img');
+                const p1 = document.createElement('p');
+                const p2 = document.createElement('p');
+                const p3 = document.createElement('p');
+                const b666 = document.createElement('p');
+                const um666 = document.createElement('img');
+                a666.id = 'a1';
+                un666.id = 'a2';
+                p1.id = 'a3';
+                p2.id = 'a4';
+                p3.id = 'a5';
+                b666.id = 'a6';
+                um666.id = 'a7';
+                a666.href = '666.html';
+                a666.textContent = '666';
+                a666.style = 'position: absolute; top: 100px; left: 50px; font-size: 20px; text-decoration: none;';
+                un666.src = 'images/unknown.png';
+                b666.style = 'position: absolute; top: 90px; left: 100px; font-size: 15px; color: #808080;';
+                un666.style = 'height: 25px; width: 25px; position: absolute; top: 100px; left: 20px;';
+                um666.src = 'images/i.webp';
+                um666.style = 'position: relative; width: 250px; border-radius: 20px; bottom: 80px; left: 750px;';
+                p1.textContent = 'Число 666 окутано тайной и мистикой, и многие люди стремятся';
+                p2.textContent = 'разгадать его загадку. Это число встречается в различных культурах';
+                p3.textContent = 'и эпохах, и каждый раз оно приобретает новое значение.';
+                p1.style = 'position: absolute; top: 120px; left: 50px;';
+                p2.style = 'position: absolute; top: 140px; left: 50px;';
+                p3.style = 'position: absolute; top: 160px; left: 50px;';
+                b666.textContent = 'localhost/6.6.6';
+                container3.appendChild(um666);
+                container3.appendChild(un666);
+                container3.appendChild(a666);
+                container3.appendChild(b666);
+                container3.appendChild(p1);
+                container3.appendChild(p2);
+                container3.appendChild(p3);
+            }
+        }
+        else{
+            if (act == 1){
+                const a666 = document.getElementById('a1');
+                const un666 = document.getElementById('a2');
+                const p1 = document.getElementById('a3');
+                const p2 = document.getElementById('a4');
+                const p3 = document.getElementById('a5');
+                const b666 = document.getElementById('a6');
+                const um666 = document.getElementById('a7');
+                imginit.style = 'display: none;';
+                container1.style = 'position: relative; bottom: 230px;';
+                container3.removeChild(a666);
+                container3.removeChild(un666);
+                container3.removeChild(p1);
+                container3.removeChild(p2);
+                container3.removeChild(p3);
+                container3.removeChild(b666);
+                container3.removeChild(um666);
+                view.style = 'position: relative; top: 10px; border: 3px #b3b3b3 solid; height: 150px; width: 1000px; border-radius: 20px; opacity: 0;';
+                act = 0;
+            }
+            if (act == 0){
+                asub = true;
+                imginit.style = 'display: none;';
+                container1.style = 'position: relative; bottom: 230px;';
+                const ah2 = document.createElement('h2');
+                ah2.style = 'position: absolute; top: 50px;'
+                ah2.textContent = 'по вашему запросу ничего не найдено';
+                ah2.id = 'a8';
+                container3.appendChild(ah2);
+            }
+            
+        }
+    }
+</script>
+  </html>
+  

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+    <style>
+        @media screen and (min-width: 360px) and (orientation: landscape){
+            body{
+                background: #000;
+            }
+        }
+    </style>
+    <div class="body">
+        <button>нажмите чтобы продолжить</button>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('button');
+    const container1 = document.querySelector('.body');
+    const style = document.getElementsByTagName('style')[0];
+    let numTxt = 0;
+    function selectWord(a, t, b, x, y, h, w, bul){
+        if (bul == true){
+            if (a == 1){
+                const words = document.createElement('img');
+                words.src = 'imgs/alphabet_russian_and_numbers.png';
+                numTxt++;
+                words.id = 'pt' + numTxt;
+                container1.appendChild(words);
+                if (b == 1){
+                    words.style.clip = 'rect(0px 50px 50px 0px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 2){
+                    words.style.clip = 'rect(0px 80px 50px 50px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 3){
+                    words.style.clip = 'rect(0px 110px 50px 80px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 4){
+                    words.style.clip = 'rect(0px 140px 50px 110px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 5){
+                    words.style.clip = 'rect(0px 180px 50px 150px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 6){
+                    words.style.clip = 'rect(0px 210px 50px 180px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 7){
+                    words.style.clip = 'rect(0px 260px 50px 210px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 8){
+                    words.style.clip = 'rect(50px 45px 80px 0px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 9){
+                    words.style.clip = 'rect(50px 80px 80px 50px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 10){
+                    words.style.clip = 'rect(50px 115px 80px 80px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 11){
+                    words.style.clip = 'rect(50px 148px 80px 115px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 12){
+                    words.style.clip = 'rect(50px 178px 80px 150px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 13){
+                    words.style.clip = 'rect(50px 215px 80px 185px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 14){
+                    words.style.clip = 'rect(50px 250px 80px 220px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 15){
+                    words.style.clip = 'rect(80px 45px 120px 0px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';    
+                    words.style.top = y + 'px';    
+                    words.style.left = x + 'px';
+                }
+                if (b == 22){
+                    words.style.clip = 'rect(112px 45px 150px 0px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';    
+                    words.style.left = x + 'px';
+                }
+                if (b == 25){
+                    words.style.clip = 'rect(112px 148px 150px 112px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 29){
+                    words.style.clip = 'rect(150px 45px 200px 0px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+                if (b == 32){
+                    words.style.clip = 'rect(150px 150px 200px 120px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
+            }
+            else{
+                const words = document.createElement('img');
+                const num = document.createElement('img');
+                words.src = 'imgs/alphabet_english.png';
+                num.src = 'imgs/alphabet_russia_and_numbers.png';
+            }
+        }
+    }
+    if(window.innerWidth == '736' && screen.orientation.type == 'landscape-primary'){
+        const und = document.createElement('audio');
+        const menusnd = document.createElement('audio');
+        const clicksnd = document.createElement('audio');
+        und.src = 'sound/undertale.mp3';
+        menusnd.src = 'sound/story-of-undertale-full.mp3';
+        clicksnd.src = 'sound/click-sound.mp3';
+        btn.addEventListener('click', () => {
+            und.play();
+            const a = document.querySelector('.body');
+            const b = document.createElement('span');
+            a.removeChild(btn);
+            b.textContent = "пожалуйста оставляйте своё устройство в типе ориентации landscape";
+            b.style.color = '#fff';
+            a.appendChild(b);
+            b.style.transition = '2s';
+            b.style.position = 'absolute';
+            b.style.top = '0px';
+            setTimeout(() => {
+                b.style.top = '150px';
+                b.style.color = '#ff000a';
+                setTimeout(() => {
+                    b.style.opacity = '0';
+                    setTimeout(() => {
+                        a.removeChild(b);
+                        act1();
+                    }, 2000);
+                }, 3000);
+            }, 1000);
+        });
+        function act1(){
+            const a = document.createElement('img');
+            const b = document.querySelector('.body');
+            a.src = 'imgs/Text_font_strong.png';
+            a.style = 'position: absolute; top: -140px; left: 50px; height: 600px; width: 600px;';
+            b.appendChild(a);
+            setTimeout(() => {
+                a.src = 'imgs/Text_font_strong2.png';
+                a.style.left = '70px';
+                setTimeout(() => {
+                    const c = document.createElement('span');
+                    const d = document.createElement('div');
+                    c.textContent = '[нажмите чтобы продолжить]';
+                    c.style = 'position: absolute; bottom: 20px; left: 270px; color: #969696;';
+                    d.style = 'position: absolute; top: 0px; left: 0px; background: #fff; opacity: 0;';
+                    d.style.height = window.innerHeight + 'px';
+                    d.style.width = window.innerWidth + 'px';
+                    b.appendChild(c);
+                    b.appendChild(d);
+                    d.addEventListener('click', () => {
+                    menusnd.play();
+                        b.removeChild(c);
+                        b.removeChild(d);
+                        b.removeChild(a);
+                        act2();
+                    });
+                }, 1500);
+            }, 4000);
+        }
+        function act2(){
+            document.title = 'назовите персонажа';
+            selectWord(1, 0, 3, 0, 0, 390, 390, true);
+            selectWord(1, 0, 1, 95, 0, 390, 390, true);
+            selectWord(1, 0, 25, 30, -111, 392, 390, true);
+            selectWord(1, 0, 6, -10, 0, 390, 390, true);
+            selectWord(1, 0, 9, 180, -37, 390, 390, true);
+            selectWord(1, 0, 13, 80, -37, 390, 390, true);
+            selectWord(1, 0, 32, 176, -147, 390, 390, true);
+            const input = document.createElement('input');
+            const btn = document.createElement('button');
+            btn.textContent = 'Подтвердить';
+            btn.style = 'position: relative; left: 15px; top: 50px; height: 30px; background: #000; border: 2px #fff solid; color: #fff;';
+            input.placeholder = 'enter here';
+            input.style = 'position: relative; top: 50px; left: 10px; border: 2px #fff solid; background: transparent; color: #fff; height: 30px; width: 300px;';
+            input.addEventListener('click', () => {
+                clicksnd.play();
+            });
+            input.id = 'a1';
+            btn.id = 'a2';
+            style.textContent = `
+                @media screen and (min-width: 360px) and (orientation: landscape){
+                    body{
+                        background: #000;
+                    }
+                    #a1::placeholder{
+                        position: relative;
+                        top: 5px;
+                        left: 100px;
+                        -webkit-font-smoothing: none;
+                        font-size: 25px;
+                    }
+                }
+            `;
+            console.log(style.innerHTML);
+            container1.appendChild(input);
+            container1.appendChild(btn);
+            btn.addEventListener('click', () => {
+                clicksnd.play();
+                if(input.value == ''){
+                    alert('пожалуйста введите имя вашего персонажа');
+                }
+                else if(input.value == 'Luana' || input.value == 'luana' || input.value == 'LUANA'){
+                    alert('имя персонажа выбрано');
+                    style.textContent = `
+                        @media screen and (min-width: 360px) and (orientation: landscape){
+                            body{
+                                background: #000;
+                            }
+                        }
+                        `;
+                    act3();
+                }
+                else{
+                    let st = prompt('Системная ошибка игры. Для продолжения введите токен. (Подсказка: токен автоматически введен)', '12568149b73d8226a78da54b82a10259');
+                    if(st == '12568149b73d8226a78da54b82a10259'){
+                        style.textContent = `
+                        @media screen and (min-width: 360px) and (orientation: landscape){
+                            body{
+                                background: #000;
+                            }
+                        }
+                        `;
+                        act3();
+                    }
+                }
+            });
+        }
+        function act3(){
+            const p1 = document.getElementById('pt1');
+            const p2 = document.getElementById('pt2');
+            const p3 = document.getElementById('pt3');
+            const p4 = document.getElementById('pt4');
+            const p5 = document.getElementById('pt5');
+            const p6 = document.getElementById('pt6');
+            const p7 = document.getElementById('pt7');
+            const inptFalse = document.getElementById('a1');
+            const btnFalse = document.getElementById('a2');
+            const p8 = document.createElement('p');
+            p8.textContent = "Это фанатская игра по вселенной"
+            container1.removeChild(p1);
+            container1.removeChild(p2);
+            container1.removeChild(p3);
+            container1.removeChild(p4);
+            container1.removeChild(p5);
+            container1.removeChild(p6);
+            container1.removeChild(p7);
+            container1.removeChild(a1);
+            container1.removeChild(a2);
+            numTxt = 0;
+            document.title = 'messenge0';
+            container1.appendChild(p8);
+        }
+    }
+    else{
+        document.title = 'переверните устройство';
+        btn.style.visibility = 'hidden';
+        window.document.write('please rotation screen');
+    }
+</script>
+</html>

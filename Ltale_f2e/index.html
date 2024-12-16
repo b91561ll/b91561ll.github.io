@@ -329,7 +329,23 @@
             const inptFalse = document.getElementById('a1');
             const btnFalse = document.getElementById('a2');
             const p8 = document.createElement('p');
-            p8.textContent = "Это фанатская игра по вселенной"
+            const p9 = document.createElement('h1');
+            const p10 = document.createElement('p');
+            const p11 = document.createElement('p');
+            const p12 = document.createElement('p');
+            const p13 = document.createElement('p');
+            p9.textContent = 'Дисклеймер!';
+            p9.style = "color: #ff000a; transition: 1s; opacity: 0;";
+            p8.textContent = 'Это фанатская игра по вселенной undertale';
+            p10.textContent = 'Также фан проект для канала "Луана"';
+            p11.textContent = 'Если вы увидели для себя что-то непристойное, дикое, авторские права(Что наверно вероятно...)...';
+            p12.textContent = 'Можете написать мне на почту если хотите (bedwars553@outlook.com). Я "обязательно" прочитаю ваше недовольство';
+            p13.textContent = 'Разблокируйте меня :(';
+            p13.style = 'position: absolute; top: 5px; right: 5px; color: #fff; opacity: 0;';
+            p12.style = 'color: #fff; transition: 1s; opacity: 0;';
+            p11.style = 'color: #fff; transition: 1s; opacity: 0;';
+            p10.style = 'color: #fff; transition: 1s; opacity: 0;';
+            p8.style = "color: #fff; transition: 1s; opacity: 0;";
             container1.removeChild(p1);
             container1.removeChild(p2);
             container1.removeChild(p3);
@@ -340,8 +356,54 @@
             container1.removeChild(a1);
             container1.removeChild(a2);
             numTxt = 0;
-            document.title = 'messenge0';
+            document.title = 'Дисклеймер!';
+            container1.appendChild(p9);
             container1.appendChild(p8);
+            container1.appendChild(p10);
+            container1.appendChild(p11);
+            container1.appendChild(p12);
+            container1.appendChild(p13);
+            setTimeout(() => {
+                p9.style.opacity = '1';
+                setTimeout(() => {
+                    p8.style.opacity = '1';
+                    setTimeout(() => {
+                        p10.style.opacity = '1';
+                        setTimeout(() => {
+                            p11.style.opacity = '1';
+                            setTimeout(() => {
+                                p12.style.opacity = '1';
+                                setTimeout(() => {
+                                    p13.style.opacity = '1';
+                                    setTimeout(() => {
+                                        container1.removeChild(p8);
+                                        container1.removeChild(p9);
+                                        container1.removeChild(p10);
+                                        container1.removeChild(p11);
+                                        container1.removeChild(p12);
+                                        container1.removeChild(p13);
+                                        act4();
+                                    }, 100);
+                                }, 5000);
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 100);
+        }
+        function act4(){
+            menusnd.currentTime = 0;
+            menusnd.pause();
+            const backup = document.createElement('div');
+            backup.style = 'position: absolute; top: 0px; left: 0px; background: #fff; transition: 10s; height: 100%; width: 100%; opacity: 0;';
+            container1.appendChild(backup);
+            setTimeout(() => {
+                backup.style.opacity = '1';
+                setTimeout(() => {
+                    container1.removeChild(backup);
+                    document.title = 'messenge0';
+                }, 11000);
+            }, 100);
         }
     }
     else{

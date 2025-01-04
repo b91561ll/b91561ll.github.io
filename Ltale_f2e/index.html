@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Меню</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 </head>
 <body>
     <style>
@@ -18,11 +18,30 @@
     </div>
 </body>
 <script>
+    document.body.style.overflow = 'hidden';
     const btn = document.querySelector('button');
     const container1 = document.querySelector('.body');
     const style = document.getElementsByTagName('style')[0];
     let numTxt = 0;
-    let evtClick = null;
+    let textAlign = false; 
+    console.warn('Пожалуйста! Если хочешь протестировать диалог Картохи, используй функцию - "fn(1)", для дальнейшего тестирования');
+    console.warn('обязательно сделай сохранения!');
+    if(window.innerWidth <= '736' && screen.orientation.type == 'landscape-primary'){
+        btn.style.visibility = 'visible';
+        fn();
+    }
+    else{
+        unfn();
+    }
+    window.addEventListener('resize', () => {
+        if(window.innerWidth <= '736' && screen.orientation.type == 'landscape-primary'){
+            btn.style.visibility= 'visible';
+            fn();
+        }
+        else{
+            unfn();
+        }
+    });
     function selectWord(a, t, b, x, y, h, w, bul){
         if (bul == true){
             if (a == 1){
@@ -199,6 +218,14 @@
                     words.style.top = y + 'px';    
                     words.style.left = x + 'px';
                 }
+                if (b == 24){
+                    words.style.clip = 'rect(112px 110px 150px 84px)';
+                    words.style.width = w + 'px';
+                    words.style.height = h + 'px';
+                    words.style.position = 'absolute';
+                    words.style.top = y + 'px';
+                    words.style.left = x + 'px';
+                }
                 if (b == 25){
                     words.style.clip = 'rect(112px 148px 150px 112px)';
                     words.style.width = w + 'px';
@@ -240,7 +267,12 @@
             }
         }
     }
-    if(window.innerWidth <= '736' && screen.orientation.type == 'landscape-primary'){
+    function fn(act){
+        //сам код
+        //условие при котором если параметр функции fn свопадет с условием ниже, то активируется тестирование диалога с картохой
+        if(act == 1){
+            act5();
+        }
         const und = document.createElement('audio');
         const menusnd = document.createElement('audio');
         const clicksnd = document.createElement('audio');
@@ -254,12 +286,13 @@
             const a = document.querySelector('.body');
             const b = document.createElement('span');
             a.removeChild(btn);
-            b.textContent = "пожалуйста оставляйте своё устройство в типе ориентации landscape";
+            b.textContent = "пожалуйста оставляйте своё устройство в типе ориентации landscape, иначе вы поймаете баг !)";
             b.style.color = '#fff';
             a.appendChild(b);
             b.style.transition = '2s';
             b.style.position = 'absolute';
             b.style.top = '0px';
+            b.style.left = '0px';
             setTimeout(() => {
                 b.style.top = '150px';
                 b.style.color = '#ff000a';
@@ -271,7 +304,7 @@
                     }, 2000);
                 }, 3000);
             }, 1000);
-        });
+        }, {once: true});
         function act1(){
             const a = document.createElement('img');
             const b = document.querySelector('.body');
@@ -314,9 +347,9 @@
             const input = document.createElement('input');
             const btn = document.createElement('button');
             btn.textContent = 'Подтвердить';
-            btn.style = 'position: relative; left: 15px; top: 50px; height: 30px; background: #000; border: 2px #fff solid; color: #fff;';
+            btn.style = 'position: absolute; left: 330px; top: 50px; height: 36px; background: #000; border: 2px #fff solid; color: #fff;';
             input.placeholder = 'enter here';
-            input.style = 'position: relative; top: 50px; left: 10px; border: 2px #fff solid; background: transparent; color: #fff; height: 30px; width: 300px;';
+            input.style = 'position: absolute; top: 50px; left: 10px; border: 2px #fff solid; background: transparent; color: #fff; height: 30px; width: 300px;';
             input.addEventListener('click', () => {
                 clicksnd.play();
             });
@@ -389,7 +422,7 @@
             const p12 = document.createElement('p');
             const p13 = document.createElement('p');
             p9.textContent = 'Дисклеймер!';
-            p9.style = "color: #ff000a; transition: 1s; opacity: 0;";
+            p9.style = "position: absolute; top: -25px; left: 0px; color: #ff000a; transition: 1s; opacity: 0;";
             p8.textContent = 'Это фанатская игра по вселенной undertale';
             p10.textContent = 'Также фан проект для канала "Луана"';
             p11.textContent = 'Если вы увидели для себя что-то непристойное, дикое, авторские права(Что наверно вероятно...)...';
@@ -397,10 +430,10 @@
             //p12.textContent = 'Можете написать мне на почту если хотите (зацензурено для видео). Я "обязательно" прочитаю ваше недовольство';
             p13.textContent = 'Спасибо)';
             p13.style = 'position: absolute; top: 5px; right: 5px; color: #fff; opacity: 0;';
-            p12.style = 'color: #fff; transition: 1s; opacity: 0;';
-            p11.style = 'color: #fff; transition: 1s; opacity: 0;';
-            p10.style = 'color: #fff; transition: 1s; opacity: 0;';
-            p8.style = "color: #fff; transition: 1s; opacity: 0;";
+            p12.style = 'position: absolute; top: 160px; left: 0px; color: #fff; transition: 1s; opacity: 0;';
+            p11.style = 'position: absolute; top: 100px; left: 0px; color: #fff; transition: 1s; opacity: 0;';
+            p10.style = 'position: absolute; top: 60px; left: 0px; color: #fff; transition: 1s; opacity: 0;';
+            p8.style = "position: absolute; top: 20px; left: 0px; color: #fff; transition: 1s; opacity: 0;";
             container1.removeChild(p1);
             container1.removeChild(p2);
             container1.removeChild(p3);
@@ -589,6 +622,100 @@
                                                                 selectWord(1, 0, 15, 378, 105, 390, 390, true);
                                                                 setTimeout(() => {
                                                                     selectWord(1, 0, 3, 340, 178, 390, 390, true);
+                                                                    setTimeout(() => {
+                                                                        selectWord(1, 0, 1, 430, 178, 390, 390, true);
+                                                                        setTimeout(() => {
+                                                                            selectWord(1, 0, 12, 325, 142, 390, 390, true);
+                                                                            setTimeout(() => {
+                                                                                selectWord(1, 0, 9, 454, 142, 390, 390, true);
+                                                                                setTimeout(() => {
+                                                                                    selectWord(1, 0, 9, 454, 142, 390, 390, true);
+                                                                                    setTimeout(() => {
+                                                                                        const symbolB = document.createElement('span');
+                                                                                        symbolB.textContent = '-';
+                                                                                        symbolB.style = 'font-size: 30px; position: absolute; bottom: 50px; left: 534px; color: #fff;';
+                                                                                        container1.appendChild(symbolB);
+                                                                                        setTimeout(() => {
+                                                                                            selectWord(1, 0, 12, 130, 162, 390, 390, true);
+                                                                                            setTimeout(() => {
+                                                                                            selectWord(1, 0, 9, 260, 162, 390, 390, true);    
+                                                                                            setTimeout(() => {
+                                                                                            selectWord(1, 0, 18, 220, 126, 390, 390, true);        
+                                                                                            setTimeout(() => {
+                                                                                            selectWord(1, 0, 29, 348, 53, 390, 390, true);    
+                                                                                            setTimeout(() => {
+                                                                                            const symbolC = document.createElement('span');
+                                                                                            symbolC.textContent = '.';
+                                                                                            symbolC.style = 'position: absolute; bottom: 30px; left: 388px; font-size: 30px; color: #fff;';
+                                                                                            container1.appendChild(symbolC);
+                                                                                            setTimeout(() => {
+                                                                                                symbolC.textContent = '..';
+                                                                                                setTimeout(() => {
+                                                                                                    symbolC.textContent = '...';
+                                                                                                    const PtextClck = document.getElementById('vrimptnt');
+                                                                                                    container1.insertBefore(PtextClck, null);
+                                                                                                    PtextClck.addEventListener('click', () => {
+                                                                                           const p1 = document.getElementById('pt1');
+                                                                            const p2 = document.getElementById('pt2');
+                                                                            const p3 = document.getElementById('pt3');
+                                                                            const p4 = document.getElementById('pt4');
+                                                                            const p5 = document.getElementById('pt5');
+                                                                            const p6 = document.getElementById('pt6');
+                                                                            const p7 = document.getElementById('pt7');
+                                                                            const p8 = document.getElementById('pt8');
+                                                                            const p9 = document.getElementById('pt9');
+                                                                            const p10 = document.getElementById('pt10');
+                                                                            const p11 = document.getElementById('pt11');
+                                                                            const p12 = document.getElementById('pt12');
+                                                                            const p13 = document.getElementById('pt13');
+                                                                            const p14 = document.getElementById('pt14');
+                                                                            const p15 = document.getElementById('pt15');
+                                                                            const p16 = document.getElementById('pt16');
+                                                                            const p17 = document.getElementById('pt17');
+                                                                            const p18 = document.getElementById('pt18');
+                                                                            const p19 = document.getElementById('pt19');
+                                                                            const p20 = document.getElementById('pt20');
+                                                                            const p21 = document.getElementById('pt21');
+                                                                            container1.removeChild(p1);
+                                                                                                                                                        container1.removeChild(p2);
+                                                                            container1.removeChild(p3);                                                                                                                                                        
+                                                                            container1.removeChild(p4);
+                                                                            container1.removeChild(p5);
+                                                                            container1.removeChild(p6);
+                                                                                                                                                        container1.removeChild(p7);
+                                                                            container1.removeChild(p8);                                                                                                                                                        
+                                                                            container1.removeChild(p9);
+                                                                            container1.removeChild(p10);
+                                                                            container1.removeChild(p11);                                                                                                                                                        
+                                                                            container1.removeChild(p12);
+                                                                            container1.removeChild(p13);
+                                                                            container1.removeChild(p14);
+                                                                                                                                                        container1.removeChild(p15);
+                                                                            container1.removeChild(p16);                                                                                                                                                        
+                                                                            container1.removeChild(p17);
+                                                                            container1.removeChild(p18);
+                                                                            container1.removeChild(p19);
+                                                                                                                                                        container1.removeChild(p20);
+                                                                            container1.removeChild(p21);
+                                                                            container1.removeChild(symbolA);
+                                                                            container1.removeChild(symbolB);
+                                                                            container1.removeChild(symbolC);
+                                                                            numTxt = 0;
+                                                                            act7();
+                                                                                                    }, {once: true});
+                                                                                                                    }, 100);
+                                                                                                                }, 100);
+                                                                                                            }, 100);
+                                                                                                        }, 100);
+                                                                                                    }, 100);
+                                                                                                }, 100);
+                                                                                            }, 100);
+                                                                                        }, 100);
+                                                                                    }, 100);
+                                                                                }, 100);
+                                                                            }, 100);
+                                                                        }, 100);
+                                                                    }, 100);
                                                                 }, 100);
                                                             }, 100);
                                                         }, 100);
@@ -601,14 +728,131 @@
                             }, 100);
                         }, 100);
                     }, 100);
-                }, 100);
-            }, 500);
+                }, 500);
+            }
+            function act7(){
+                setTimeout(() => {
+                    selectWord(1, 0, 3, 200, 160, 390, 390, true);
+                    setTimeout(() => {
+                        selectWord(1, 0, 32, 200, 13, 390, 390, true);
+                        setTimeout(() => {
+                            selectWord(1, 0, 13, 160, 123, 390, 390, true);
+                            setTimeout(() => {
+                                selectWord(1, 0, 20, 187, 86, 390, 390, true);
+                                setTimeout(() => {
+                                    const symbolA = document.createElement('span');
+                                    symbolA.textContent = '.';
+                                    symbolA.style = 'position: absolute; bottom: 70px; left: 400px; color: #fff; font-size: 30px;';
+                                    container1.appendChild(symbolA);
+                                    setTimeout(() => {
+                                        symbolA.textContent = '..';
+                                        setTimeout(() => {
+                                            symbolA.textContent = '...';
+                                            setTimeout(() => {
+                                                selectWord(1, 0, 11, 167, 144, 390, 390, true);
+                                                setTimeout(() => {
+                                                    selectWord(1, 0, 1, 298, 181, 390, 390, true);
+                                                    setTimeout(() => {
+                                                        selectWord(1, 0, 7, 123, 181, 390, 390, true);
+                                                        setTimeout(() => {
+                                                            selectWord(1, 0, 6, 183, 181, 390, 390, true);
+                                                            setTimeout(() => {
+                                                                selectWord(1, 0, 19, 244, 108, 390, 390, true);
+                                                                setTimeout(() => {
+                                                                    selectWord(1, 0, 18, 304, 108, 390, 390, true);
+                                                                    setTimeout(() => {
+                                                                        selectWord(1, 0, 32, 325, 35, 390, 390, true);
+                                                                        setTimeout(() => {
+                                                                            const symbolB = document.createElement('span');
+                                                                            symbolB.textContent = '.';
+                                                                            symbolB.style = 'position: absolute; bottom: 50px; left: 470px; color: #fff; font-size: 30px;';
+                                                                            container1.appendChild(symbolB);
+                                                                            setTimeout(() => {
+                                                                                symbolB.textContent = '..';
+                                                                                setTimeout(() => {
+                                                                                    symbolB.textContent = '...';
+                                                                                    const PtextClck = document.getElementById('vrimptnt');
+                                                                                    container1.insertBefore(PtextClck, null);
+                                                                                    PtextClck.addEventListener('click', () => {
+                                                                                        const p1 = document.getElementById('pt1');
+                                                                                        const p2 = document.getElementById('pt2');
+                                                                                        const p3 = document.getElementById('pt3');
+                                                                                        const p4 = document.getElementById('pt4');
+                                                                                        const p5 = document.getElementById('pt5');
+                                                                                        const p6 = document.getElementById('pt6');
+                                                                                        const p7 = document.getElementById('pt7');
+                                                                                        const p8 = document.getElementById('pt8');
+                                                                                        const p9 = document.getElementById('pt9');
+                                                                                        const p10 = document.getElementById('pt10');
+                                                                                        const p11 = document.getElementById('pt11');
+                                                                                        container1.removeChild(symbolA);
+                                                                                        container1.removeChild(symbolB);
+                                                                                        container1.removeChild(p1);
+                                                                                                                                                        container1.removeChild(p2);
+                                                                            container1.removeChild(p3);                                                                                                                                                        
+                                                                            container1.removeChild(p4);
+                                                                            container1.removeChild(p5);
+                                                                            container1.removeChild(p6);
+                                                                                                                                                        container1.removeChild(p7);
+                                                                            container1.removeChild(p8);                                                                                                                                                        
+                                                                            container1.removeChild(p9);
+                                                                            container1.removeChild(p10);
+                                                                            container1.removeChild(p11);
+                                                                                            numTxt = 0;
+                                                                                            act8();
+                                                                                    }, {once: true});
+                                                                                }, 300);
+                                                                            }, 300);
+                                                                        }, 300);
+                                                                    }, 300);
+                                                                }, 300);
+                                                            }, 300);
+                                                        }, 300);
+                                                    }, 300);
+                                                }, 300);
+                                            }, 600);
+                                        }, 300);
+                                    }, 300);
+                                }, 300);
+                            }, 100);
+                        }, 100);
+                    }, 100);
+                }, 400);
+            }
+            function act8(){
+                setTimeout(() => {
+                    selectWord(1, 0, 24, 208, 45, 390, 390, true);
+                    setTimeout(() => {
+                        selectWord(1, 0, 19, 167, 82, 390, 390, true);
+                        setTimeout(() => {
+                            selectWord(1, 0, 15, 325, 82, 390, 390, true);
+                            setTimeout(() => {
+                                const symbolA = document.createElement('span');
+                                symbolA.textContent = '-';
+                                symbolA.style = 'position: absolute; bottom: 75px; left: 370px; color: #fff; font-size: 30px;';
+                                container1.appendChild(symbolA);
+                                setTimeout(() => {
+                                    selectWord(1, 0, 19, 227, 82, 390, 390, true);
+                                    setTimeout(() => {
+                                        selectWord(1, 0, 15, 390, 82, 390, 390, true);
+                                    }, 100);
+                                }, 100)
+                            }, 100);
+                        }, 100);
+                    }, 100);
+                }, 300);
+            }
         }
-    }
-    else{
-        document.title = 'переверните устройство';
-        btn.style.visibility = 'hidden';
-        window.document.write('please rotation screen');
-    }
+        function unfn(){
+            document.title = 'переверните устройство';
+            btn.style.visibility = 'hidden';
+            if(textAlign == false){
+                let tex = document.createElement('span');
+                tex.textContent = 'please rotaion screen';
+                tex.id = 'ast';
+                container1.appendChild(tex);
+                textAlign = true;
+            }
+        }
 </script>
 </html>
